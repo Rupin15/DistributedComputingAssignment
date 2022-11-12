@@ -1,9 +1,9 @@
-package cs455.scaling.server;
+package cs304.scaling.server;
 
 
-import cs455.scaling.bytes.RandomPacket;
-import cs455.scaling.pool.ThreadPool;
-import cs455.scaling.stats.Tracker;
+import cs304.scaling.bytes.RandomPacket;
+import cs304.scaling.pool.ThreadPool;
+import cs304.scaling.stats.Tracker;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -26,7 +26,7 @@ public class Server {
     }
 
     public static void register(Selector selector, ServerSocketChannel serverSocket) throws IOException{
-        //grab incoming socket from cs455.scaling.server
+        //grab incoming socket from cs304.scaling.server
         SocketChannel client = serverSocket.accept();
         //configure it to be a new channel
         if(client.isRegistered()){
@@ -34,7 +34,7 @@ public class Server {
         }
         client.configureBlocking(false);
         client.register(selector, SelectionKey.OP_READ);
-//        System.out.println("\t\tNew cs455.scaling.client registered.");
+//        System.out.println("\t\tNew cs304.scaling.client registered.");
     }
 
     public static void readAndRespond(SelectionKey key, Tracker tracker) throws IOException, NoSuchAlgorithmException {
@@ -87,7 +87,7 @@ public class Server {
             batchTime = Integer.parseInt(args[3]);
         } catch (Exception e) {
             System.out.println("Usage: ");
-            System.out.println("java cs455.scaling.server.Server [port] [thread-pool-size] [batch-size] [batch-time]");
+            System.out.println("java cs304.scaling.server.Server [port] [thread-pool-size] [batch-size] [batch-time]");
             return;
         }
 

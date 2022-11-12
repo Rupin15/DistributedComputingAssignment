@@ -1,6 +1,6 @@
-package cs455.scaling.stats;
+package cs304.scaling.stats;
 
-import cs455.scaling.client.Client;
+import cs304.scaling.client.Client;
 
 import java.util.concurrent.atomic.AtomicLong;
 

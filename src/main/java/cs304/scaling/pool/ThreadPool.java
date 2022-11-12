@@ -1,8 +1,8 @@
-package cs455.scaling.pool;
+package cs304.scaling.pool;
 
 import com.sun.org.apache.bcel.internal.generic.Select;
-import cs455.scaling.server.Server;
-import cs455.scaling.stats.Tracker;
+import cs304.scaling.server.Server;
+import cs304.scaling.stats.Tracker;
 
 import java.io.IOException;
 import java.math.BigInteger;

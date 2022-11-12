@@ -1,4 +1,4 @@
-package cs455.scaling.pool;
+package cs304.scaling.pool;
 
 import static java.lang.Thread.sleep;
 

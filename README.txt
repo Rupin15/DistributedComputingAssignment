@@ -5,12 +5,12 @@ How to use:
 2. Start a bunch of clients.
 
 Server:
-java -cp ./build/libs/cs455.scaling-1.0-SNAPSHOT.jar cs455.scaling.server.Server [port] [thread-pool-size] [batch-size] [batch-time]
- ( e.g. java -cp ./build/libs/cs455.scaling-1.0-SNAPSHOT.jar cs455.scaling.server.Server 4568 8 8 1)
+java -cp ./build/libs/cs304.scaling-1.0-SNAPSHOT.jar cs304.scaling.server.Server [port] [thread-pool-size] [batch-size] [batch-time]
+ ( e.g. java -cp ./build/libs/cs304.scaling-1.0-SNAPSHOT.jar cs304.scaling.server.Server 4568 8 8 1)
 
 Client:
-java -cp ./build/libs/cs455.scaling-1.0-SNAPSHOT.jar cs455.scaling.client.Client [server-host] [server-port] [message-rate-per-sec]
- ( e.g. java -cp ./build/libs/cs455.scaling-1.0-SNAPSHOT.jar cs455.scaling.client.Client localhost 4568 4)
+java -cp ./build/libs/cs304.scaling-1.0-SNAPSHOT.jar cs304.scaling.client.Client [server-host] [server-port] [message-rate-per-sec]
+ ( e.g. java -cp ./build/libs/cs304.scaling-1.0-SNAPSHOT.jar cs304.scaling.client.Client localhost 4568 4)
 
 Notes:
 Deregistration may fail if the client is mid-transmission. Known issue, catch "Broken Pipe"?
@@ -19,32 +19,32 @@ Some testing classes are present, see below.
 
 ### Description of Files ###
 
-cs455.scaling.bytes
+cs304.scaling.bytes
  Hash and HashSingleton
   :: testing - these were used early on for churning out specific sets of messages
  RandomPacket
   :: this makes random packets and computes SHA-1 hash
 
-cs455.scaling.client
+cs304.scaling.client
  Client
   :: this contains the three client threads
     :: first thread is statistics tracker
     :: second thread is sender, loops sending random messages
     :: third thread is receiver, loops taking in hashes (sometimes parsing them)
 
- cs455.scaling.pool
+ cs304.scaling.pool
   PrintBot
    :: testing - artifact
   ThreadPool
    :: contains batch manager and pool specifically set up to work with "keys >> readAndRespond"
      :: worker threads are Swimmers, uses .poll(timeout) to handle incomplete batches
 
- cs455.scaling.server
+ cs304.scaling.server
   Server
     :: makes and starts thread pool
     :: thread for tracker and thread for looping over selector managed by thread pool
 
- cs455.scaling.stats
+ cs304.scaling.stats
   ClientTracker
     :: stats tracker for client with !BONUS! bad hash counter output
   Tracker

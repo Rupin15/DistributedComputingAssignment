@@ -1,4 +1,4 @@
-package cs455.scaling.bytes;
+package cs304.scaling.bytes;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -19,7 +19,4 @@ public class Hash {
         }
         return hashString;
     }
-
-
-
 }

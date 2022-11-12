@@ -1,4 +1,4 @@
-package cs455.scaling.bytes;
+package cs304.scaling.bytes;
 
 // maybe make one, use a generator function within it to avoid overhead
 

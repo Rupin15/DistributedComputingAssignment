@@ -1,4 +1,4 @@
-package cs455.scaling.bytes;
+package cs304.scaling.bytes;
 
 public class HashSingleton {
     private static HashSingleton single_instance = null;

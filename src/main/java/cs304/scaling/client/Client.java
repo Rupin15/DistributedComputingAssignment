@@ -1,7 +1,7 @@
-package cs455.scaling.client;
+package cs304.scaling.client;
 
-import cs455.scaling.bytes.RandomPacket;
-import cs455.scaling.stats.ClientTracker;
+import cs304.scaling.bytes.RandomPacket;
+import cs304.scaling.stats.ClientTracker;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -48,18 +48,18 @@ public class Client {
             messageRate = Integer.parseInt(args[2]);
         } catch(Exception e){
             System.out.println("Usage: ");
-            System.out.println("java cs455.scaling.client.Client [server-host] [server-port] [message-rate-per-sec]");
+            System.out.println("java cs304.scaling.client.Client [server-host] [server-port] [message-rate-per-sec]");
             return;
         }
 
 
         try {
-            //connect to cs455.scaling.server
+            //connect to cs304.scaling.server
             client = SocketChannel.open(new InetSocketAddress(hostname,port));
             //create buffer
             buffer = ByteBuffer.allocate(8000);
         } catch (IOException e){
-            System.err.println("::Client: error connecting to cs455.scaling.server, stacktrace:...");
+            System.err.println("::Client: error connecting to cs304.scaling.server, stacktrace:...");
             e.printStackTrace();
         }
 
